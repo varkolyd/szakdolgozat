@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+<form method="POST" enctype="multipart/form-data">
+  <h3 align="center">Sign Up</h3>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      value = {% if data %}
+      {{data[0]}}
+      {% else %}
+      ""
+      {% endif %}
+
+
+    />
+  </div>
+  <div class="form-group">
+    <label for="username">User Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="username"
+      placeholder="Enter username"
+      value = {% if data %}
+      {{data[1]}}
+      {% else %}
+      ""
+      {% endif %}
+
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+      value = {% if data %}
+      {{data[2]}}
+      {% else %}
+      ""
+      {% endif %}
+    />
+  </div>
+  <div class="form-group">
+    <label for="password_confirm">Confirm Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password_confirm"
+      name="password_confirm"
+      placeholder="Confirm password"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary" name ="action" value="Submit">Submit</button>
+  <div></div>
+  <div>Import user from XML</div>
+  <br />
+  <input type = "file" name = "file" />
+  <input type = "submit" name="action" value="Upload"/>
+
+<br />
+
+</form>
+{% endblock %}

